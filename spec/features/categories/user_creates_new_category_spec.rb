@@ -10,6 +10,6 @@ describe "User creates a new category" do
     click_button "Create Category"
 
     expect(current_path).to eq("/categories/1")
-    expect(page).to have_content("Engineering")
+    expect(page).to have_content("Enginnering")
   end
 end

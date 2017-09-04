@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
+All Jobs for <strong><%= @category.title %></strong>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
-
+<% @category.jobs.each do |job| %>
+  <ul><%= job.title %> at <%= job.company.name %></ul>
+<% end %>
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
