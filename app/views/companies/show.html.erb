@@ -1,9 +1,17 @@
 All Jobs for <strong><%= @company.name %></strong>
 <ul>
 <% @company.jobs.each do |job| %>
-  <li><%= job.title %></li>
-<% end %>
-</ul>
+  </li class = job_<%= job.id %>>
+    <%= job.title %> at <%= job.company.name %>
+    <%= link_to "Show", company_job_path(@company, job) %>
+    <%= link_to "Edit", edit_company_job_path(@company, job) %>
+    <%= link_to "Delete", company_job_path(@company, job), method: "delete" %>
+    <br>
+  </ul>
+    <% end %>
+
+
+
 <ul>
 <% @company.contacts.each do |contact| %>
   <li>Name: <%= contact.name %></li>

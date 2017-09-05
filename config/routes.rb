@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/jobs", to: 'jobs#location'
+  get "/dashboard", to: 'dashboard#index'
 
   resources :companies do
     resources :jobs do
@@ -9,6 +11,10 @@ Rails.application.routes.draw do
   resources :companies do
     resources :contacts, only: :create
   end
+
+
+
+  resources :dashboards, only: [:index]
 
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.

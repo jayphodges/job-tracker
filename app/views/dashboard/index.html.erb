@@ -1,0 +1,39 @@
+<h1>Job Tracker Dashboard</h1>
+
+
+<h2>Jobs by interest level</h2>
+<table>
+  <tr>
+    <th>Level of Interest</th>
+    <th>Number of Jobs</th>
+  </tr>
+  <% @jobs_by_interest.each do |interest, count| %>
+    <tr class="level_<%= interest %>">
+      <td><%= interest %></td>
+      <td><%= count %></td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+
+
+<p>The top three companies ranked by average level of interest along with their respective average level of interest.</p>
+<% @top_three_by_interest.each do |company|  %>
+<p><%= company.name %> <%= company.average_interest %></p>
+<% end %>
+
+A count of jobs by location with a link to visit a page with jobs only in that location. The url should be /jobs?location=Denver.
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Number of Jobs</th>
+    <th></th>
+  </tr>
+  <% @job_count_by_location.each do |location, count| %>
+    <tr class="city_<%= location %>">
+      <td><%= location %></td>
+      <td><%= count %></td>
+    </tr>
+  <% end %>
+</table>
