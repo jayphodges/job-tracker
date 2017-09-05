@@ -6,6 +6,7 @@ class JobsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @job = Job.new()
   end
 
@@ -21,6 +22,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @categories = Category.all
     @job = Job.find(params[:id])
   end
 
