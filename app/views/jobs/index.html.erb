@@ -10,3 +10,27 @@ All Jobs for <strong><%= @company.name %></strong>
 
   </ul>
     <% end %>
+
+    <ul>
+    <% @company.contacts.each do |contact| %>
+      <li>Name: <%= contact.name %></li>
+      <li>Position: <%= contact.position %></li>
+      <li>E-mail: <%= mail_to contact.email %></li>
+      <br />
+    <% end %>
+    </ul>
+
+
+    <h2>Create new contact</h2>
+    <%= form_for [@company, @contact] do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br />
+      <%= f.label :position %>
+      <%= f.text_field :position %>
+      <br />
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <br />
+      <%= f.submit %>
+    <% end %>

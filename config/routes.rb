@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :companies do
+    resources :contacts, only: :create
+  end
+
   resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

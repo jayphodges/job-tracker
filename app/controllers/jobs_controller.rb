@@ -22,6 +22,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @contact = Contact.new
     @categories = Category.all
     @job = Job.find(params[:id])
   end
